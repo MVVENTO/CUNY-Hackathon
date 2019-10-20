@@ -1,0 +1,24 @@
+import pandas as pd
+import folium
+from google.colab import files
+uploaded = files.upload()
+
+for fn in uploaded.keys():
+  print('User uploaded file "{name}" with length {length} bytes'.format(
+      name=fn, length=len(uploaded[fn])))
+      
+import io
+import pandas as pd
+
+
+folium_map = folium.Map(location=[40.738, -73.98],
+                        zoom_start=13,
+                        tiles="CartoDB dark_matter")
+
+folium.CircleMarker(location=[40.738, -73.98],fill=True).add_to(folium_map)
+folium_map
+
+
+folium_map.save("my_map.html")
+
+bike_data.head()
